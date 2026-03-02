@@ -42,7 +42,9 @@ const updateflag = (element) =>{
     console.log(code);
     let countrycode = countryList[code];
     flagimg = `https://flagsapi.com/${countrycode}/flat/64.png`;
+    
     let img = element.parentElement.querySelector("img");
+    console.log(element);
     img.src = flagimg;
 
 
@@ -83,9 +85,12 @@ msg.innerText = `${amtval}${fromCurr.value} = ${final_rate}${toCurr.value}` ;
 };
 
 
-select.addEventListener ("change" , (evt)  =>{
+fromCurr.addEventListener("change", (evt) => {
     updateflag(evt.target);
+});
 
+toCurr.addEventListener("change", (evt) => {
+    updateflag(evt.target);
 });
 
 
